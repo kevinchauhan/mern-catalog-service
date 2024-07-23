@@ -1,7 +1,7 @@
 {
-    "name": "template-service",
+    "name": "catalog-service",
     "version": "1.0.0",
-    "description": "A user management service",
+    "description": "A user catalog service",
     "main": "index.js",
     "scripts": {
         "dev": "cross-env NODE_ENV=development nodemon src/server.ts",
@@ -46,11 +46,14 @@
         ]
     },
     "dependencies": {
+        "@types/config": "^3.3.4",
+        "config": "^3.3.12",
         "cors": "^2.8.5",
         "cross-env": "^7.0.3",
         "express": "^4.18.2",
         "express-validator": "^7.0.1",
         "http-errors": "^2.0.0",
+        "js-yaml": "^4.1.0",
         "uuid": "^9.0.1",
         "winston": "^3.10.0"
     }
