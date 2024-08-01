@@ -9,11 +9,12 @@ export class CategoryController {
     constructor(
         private categoryService: CategoryService,
         private logger: Logger,
-    ) {}
+    ) {
+        this.create = this.create.bind(this);
+    }
 
     async create(req: Request, res: Response, next: NextFunction) {
         const result = validationResult(req);
-
         if (!result.isEmpty()) {
             return next(createHttpError(400, result.array()[0].msg as string));
         }
@@ -28,6 +29,6 @@ export class CategoryController {
 
         this.logger.info("New Category created", { id: category._id });
 
-        res.json({});
+        res.json({ id: category._id });
     }
 }
